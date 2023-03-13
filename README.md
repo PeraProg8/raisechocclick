@@ -1,5 +1,3 @@
-# https://peraprog8.github.io/raisechocclick.github.io/
-
 Um jogo estilo Clicker e Roleplay onde tu, o jogador,
 vais sobrevivendo usando chocolates num mundo achocolatado
 para ires subindo na vida até ultrapassares a realidade
