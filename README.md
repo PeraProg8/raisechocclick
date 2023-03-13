@@ -1,4 +1,4 @@
-# https://raisechocclick.github.io
+# http://raisechocclick.github.io
 
 Um jogo estilo Clicker e Roleplay onde tu, o jogador,
 vais sobrevivendo usando chocolates num mundo achocolatado
