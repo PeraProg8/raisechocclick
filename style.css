@@ -1,0 +1,76 @@
+html, head, body{
+    font-family: sans-serif;
+    color: black;
+}
+
+::-webkit-scrollbar{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: lightgrey;
+    border-radius: 7px;
+}
+
+.ver{
+    text-decoration: underline;
+    font-family: monospace;
+    font-size: 10px;
+}
+
+.JumpBTN{
+    text-shadow: black 1px 5px 15px;
+    background-color: transparent;
+    border-color: transparent;
+    height: fit-content;
+    width: fit-content;
+    font-size: 20px;
+    cursor: pointer;
+}.JumpBTN:hover{
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-name: JumpHover;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+}
+
+#MessageOutput{
+    background-color: transparent;
+    border-color: transparent;
+    color: darkslateblue;
+}
+
+#ChocBTN, #MoneyBTN{
+    text-shadow: black 5px 5px 15px;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 100px;
+    font-size: 100px;
+    cursor: pointer;
+}
+
+#ChocOutput, #MoneyOutput{
+    background-color: transparent;
+    border-color: transparent;
+    text-align: center;
+    font-size: 30px;
+    cursor: text;
+    width: 900px;
+}
+
+@keyframes JumpHover {
+    0%{
+        transform: rotate(0deg);
+    }
+    20%{
+        transform: rotate(5deg);
+    }
+    80%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
