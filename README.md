@@ -7,4 +7,7 @@ para ires subindo na vida até ultrapassares a realidade
 do jogo (caso haja um hehe). Foi um projeto feito por mim
 (PeraProg8) com o objetivo de criar o meu próprio clicker,
 porém... de forma (digamos) peculiar, fundindo também o
-estilo de Roleplay (RPG). Espero que gostes! :)
+estilo de Roleplay (RPG). Espero que gostes!
+
+Deixa um comentário, crítica ou relato de bug
+para eu ver por favor! :D
