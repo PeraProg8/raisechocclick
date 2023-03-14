@@ -169,9 +169,10 @@ function BePolitical(){
     if(ChocNum > 200 && ReputNum > 250 && Money > 1000 && Status == "Vendedor de Chocolates"){
         Status = "Político"
         window.alert("Tu agora és politico (?-?)")
-    }else if(Status != "Político"){
+    }else{
         window.alert("Precisas de:\nMais de 200 chocolates,\numa alta reputação\ne de mais de 1000$ para seres político (~_~)")
-    }else if(Status == "Político"){
+    }
+    if(Status == "Político"){
         window.alert("Tu já és político (~-~)")
     }else if(Status == "Rei"){
         window.alert("Tu já és Rei (^.^)")
@@ -182,9 +183,10 @@ function BeKing(){
     if(ChocNum > 500 && ReputNum > 400 && Money > 5000 && Status == "Político"){
         Status = "Rei"
         window.alert("Tu agora és Rei (?-?)")
-    }else if(Status != "Político"){
+    }else{
         window.alert("Precisas de:\nSer politico, \nter mais de 500 chocolates,\numa alta reputação\ne de mais de 5000$ para seres Rei (~_~)")
-    }else if(Status == "Rei"){
+    }
+    if(Status == "Rei" && Status != "Político"){
         window.alert("Tu já és Rei (^.^)")
     }
 }
