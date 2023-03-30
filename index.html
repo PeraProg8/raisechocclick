@@ -2,18 +2,26 @@
 <html>
     <head>
         <title>Raise, My Chocolate Clicker</title>
-        <audio id="audiotoplay" controls autofocus hidden>
-            <source src="OST/Leite e Cacau.mp3"/>
-        </audio>
-        <p class="ver">Release V. 3</p>
+        <p class="ver">V. Release 4</p>
         <p style="font-size: 10px;">Mensagem para os cheaters: Não uses auto-clicker :)</p>
         <p style="font-size: 10px;">Inspirado em Candy Box e Cookie Clicker</p>
-        <p style="font-size: 10px;">Bem-vindo ao "Raise, My Chocolate Clicker" (RMCC)</p>
+        <p style="font-size: 10px;">Bem-vindo ao "Raise, My Chocolate Clicker" (RMCC) (c)</p>
         <p style="font-size: 10px;">Por PeraProg8</p>
-        <p style="font-size: 10px;">14 / 1 / 2023</p>
+        <p style="font-size: 10px;">14/1/2023 [primeira atualização]</p>
         <button style="font-size: 10px; text-decoration: underline; text-decoration-color: blue; cursor: pointer;" onclick="Log()">Log.</button>
         <br>
-        <button style="font-size: 10px; text-decoration: underline; text-decoration-color: blue; cursor: pointer;" onclick="playAudio()">Tocar Soundtrack</button>
+        <div alt="OST">
+            <audio id="audiotoplay1" controls autofocus hidden>
+                <source src="OST/Leite e Cacau.mp3"/>
+            </audio>
+            <audio id="audiotoplay2" controls autofocus hidden>
+                <source src="OST/Música Doce.mp3"/>
+            </audio>
+            <audio id="audiotoplay3" controls autofocus hidden>
+                <source src="OST/Bombons Na Luta.mp3"/>
+            </audio>
+            <input type="button" value="Tocar" onclick="playOST()" style="font-size: 10px; text-decoration: underline; text-decoration-color: blue; cursor: pointer;"/>
+        </div>
         <link rel="stylesheet" href="style.css"/>
         <script src="script.js"></script>
         <br>
@@ -46,7 +54,7 @@
             <br>
             <br>
             <fieldset>
-                <legend>Negócio</legend>
+                <legend>Negócios</legend>
                 <button class="JumpBTN" onclick="BuyChocolates()">🛍️ Comprar chocolates</button>
                 <br>
                 <br>
@@ -59,7 +67,7 @@
         <br>
         <div align="center">
             <fieldset>
-                <legend>Político</legend>
+                <legend>Política</legend>
                 <button class="JumpBTN" onclick="DoSpeech()">💬 Discursar</button>
                 <br>
                 <button class="JumpBTN" onclick="BePolitical()">🗣️ Entrar na política</button>

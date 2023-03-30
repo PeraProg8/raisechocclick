@@ -6,13 +6,35 @@ var Invt = 0
 var Money = 0
 var StealTimes = 0
 var Status = "Vendedor de Chocolates"
+var Music = Math.ceil(Math.random() * 4)
 var WaitTime1 = 60000;
 var WaitTime2 = 20000;
 
-function playAudio(){
-    document.getElementById("audiotoplay").play();
+//Funções Musicais
+function playOST(){
+    Music = Math.ceil(Math.random() * 4)
+    if(Music == 1){
+        document.getElementById("audiotoplay1").play()
+        document.getElementById("audiotoplay2").pause()
+        document.getElementById("audiotoplay3").pause()
+    }else if(Music == 2){
+        document.getElementById("audiotoplay1").pause()
+        document.getElementById("audiotoplay2").play()
+        document.getElementById("audiotoplay3").pause()
+    }else if(Music == 3){
+        document.getElementById("audiotoplay1").pause()
+        document.getElementById("audiotoplay2").pause()
+        document.getElementById("audiotoplay3").play()
+    }
+    else if(Music == 4){
+        document.getElementById("audiotoplay1").pause()
+        document.getElementById("audiotoplay2").pause()
+        document.getElementById("audiotoplay3").pause()
+    }
+    console.log(Music, '.play')
 }
 
+//Funções de jogo
 function ResetGame(){
     ChocNum = 0;
     ChocToSell = ChocNum
@@ -169,10 +191,9 @@ function BePolitical(){
     if(ChocNum > 200 && ReputNum > 250 && Money > 1000 && Status == "Vendedor de Chocolates"){
         Status = "Político"
         window.alert("Tu agora és politico (?-?)")
-    }else{
+    }else if(Status != "Político" && Status == "Vendedor de Chocolates"){
         window.alert("Precisas de:\nMais de 200 chocolates,\numa alta reputação\ne de mais de 1000$ para seres político (~_~)")
-    }
-    if(Status == "Político"){
+    }else if(Status == "Político" && Status != "Vendedor de Chocolates"){
         window.alert("Tu já és político (~-~)")
     }else if(Status == "Rei"){
         window.alert("Tu já és Rei (^.^)")
@@ -183,16 +204,15 @@ function BeKing(){
     if(ChocNum > 500 && ReputNum > 400 && Money > 5000 && Status == "Político"){
         Status = "Rei"
         window.alert("Tu agora és Rei (?-?)")
-    }else{
+    }else if(Status != "Político" && Status != "Rei"){
         window.alert("Precisas de:\nSer politico, \nter mais de 500 chocolates,\numa alta reputação\ne de mais de 5000$ para seres Rei (~_~)")
-    }
-    if(Status == "Rei" && Status != "Político"){
+    }else if(Status == "Rei"){
         window.alert("Tu já és Rei (^.^)")
     }
 }
 
 function Log(){
-    document.write("<title>Raise, My Chocolate Clicker</title><style>html, head, body{font-family: sans-serif; color: black;} p, ul{font-family: 'Courier New'; color: black;}</style><h1>Log.:</h1><br><ul><li>[1] Função 'DoSpeech()' adicionada;</li><li>[2] Função 'EatChocolate()' atualizada;</li><li>[3] Função 'GetHungry()' atualizada;</li><li>[4] Função 'DoSpeech()' atualizada;</li><ul><li>[4.1] Adicionada possibilidade de 3 discursos aleatórios;</li></ul><li>[5] Função 'Steal()' atualizada;</li><li>[6] Função musical adicionada;</li><li>[7] Função musical atualizada;</li><li>[8] Scrollbar alterada visualmente;</li></ul>")
+    document.write("<title>Raise, My Chocolate Clicker</title><style>html, head, body{font-family: sans-serif; color: black;} p, ul{font-family: 'Courier New'; color: black;}</style><h1>Log.:</h1><br><ul><li>[1] Função 'DoSpeech()' adicionada;</li><li>[2] Função 'EatChocolate()' atualizada;</li><li>[3] Função 'GetHungry()' atualizada;</li><li>[4] Função 'DoSpeech()' atualizada;</li><ul><li>[4.1] Adicionada possibilidade de 3 discursos aleatórios;</li></ul><li>[5] Função 'Steal()' atualizada;</li><li>[6] Função musical adicionada;</li><li>[7] Função musical atualizada;</li><li>[8] Scrollbar alterada visualmente;</li><li>[9] Função 'BeKing()' corrigida;</li><li>[10] Função 'BePolitical()' corrigida;</li><li>[29/Mar.] Parabéns Rafa! 🎂;</li><li>[11] Adicionada função 'playOST()' adicionada;<ul><li>[11.1] Iniciação de música aleatória;<li>[11.2] Corrigidas as funções de música;</li></li></ul></li><li>[12] Versão 4 realisada;</li></ul>")
 }
 
 setInterval(GetHungry, WaitTime2)
