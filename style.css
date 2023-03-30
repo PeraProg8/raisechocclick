@@ -13,6 +13,10 @@ html, head, body{
 }
 
 .ver{
+    animation-name: Yeah;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
     text-decoration: underline;
     font-family: monospace;
     font-size: 10px;
@@ -72,5 +76,16 @@ html, head, body{
     }
     100%{
         transform: rotate(0deg);
+    }
+}
+@keyframes Yeah {
+    0%{
+        color: red;
+    }
+    50%{
+        color: yellow;
+    }
+    100%{
+        color: blue;
     }
 }
