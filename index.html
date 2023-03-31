@@ -2,12 +2,12 @@
 <html>
     <head>
         <title>Raise, My Chocolate Clicker</title>
-        <p class="ver">V. Release 4</p>
+        <p class="ver">V. Release 5</p>
         <p style="font-size: 10px;">Mensagem para os cheaters: Não uses auto-clicker :)</p>
         <p style="font-size: 10px;">Inspirado em Candy Box e Cookie Clicker</p>
         <p style="font-size: 10px;">Bem-vindo ao "Raise, My Chocolate Clicker" (RMCC) (c)</p>
         <p style="font-size: 10px;">Por PeraProg8</p>
-        <p style="font-size: 10px;">14/1/2023 [primeira atualização]</p>
+        <p style="font-size: 10px;">14/1/2023 [a partir da primeira atualização]</p>
         <button style="font-size: 10px; text-decoration: underline; text-decoration-color: blue; cursor: pointer;" onclick="Log()">Log.</button>
         <br>
         <div alt="OST">
@@ -20,7 +20,8 @@
             <audio id="audiotoplay3" controls autofocus hidden>
                 <source src="OST/Bombons Na Luta.mp3"/>
             </audio>
-            <input type="button" value="Tocar" onclick="playOST()" style="font-size: 10px; text-decoration: underline; text-decoration-color: blue; cursor: pointer;"/>
+            <input type="button" value="Tocar" onclick="playOST()" style="font-size: 10px; text-decoration: underline; text-decoration-color: blue; cursor: pointer;"/><br>
+            <button onclick="ResetGame()" style="font-size: 10px; text-decoration: underline; text-decoration-color: blue; cursor: pointer;">Reiniciar</button>
         </div>
         <link rel="stylesheet" href="style.css"/>
         <script src="script.js"></script>
@@ -29,6 +30,7 @@
     <body>
         <div align="center">
             <br>
+            <label>Conhecimento(s):</label><progress id="KnowBar" value="10" max="500"></progress><br>
             <label>Reputação: </label><progress id="ReputBar" value="0" max="500"></progress><br>
             <label>Fome: </label><progress id="HungryBar" value="30" max="100"></progress>
             <br>
@@ -54,25 +56,36 @@
             <br>
             <br>
             <fieldset>
-                <legend>Negócios</legend>
-                <button class="JumpBTN" onclick="BuyChocolates()">🛍️ Comprar chocolates</button>
-                <br>
-                <br>
-                <button class="JumpBTN" onclick="Invest()">📈 Investir</button>
-                <br>
-                <br>
-                <button class="JumpBTN" onclick="Steal()">👤 Roubar</button>
+                <legend>Educação</legend>
+                <button class="JumpBTN" onclick="Study()">📚 Estudar</button>
             </fieldset>
-        </div>
-        <br>
-        <div align="center">
             <fieldset>
-                <legend>Política</legend>
-                <button class="JumpBTN" onclick="DoSpeech()">💬 Discursar</button>
-                <br>
-                <button class="JumpBTN" onclick="BePolitical()">🗣️ Entrar na política</button>
-                <br>
-                <button class="JumpBTN" onclick="BeKing()">👑 Ser rei</button>
+                <legend>Negócios</legend>
+                <fieldset>
+                    <legend>Comércio</legend>
+                    <button class="JumpBTN" onclick="BuyChocolates()">🛍️ Comprar chocolates</button>
+                    <br>
+                    <br>
+                    <button class="JumpBTN" onclick="Invest()">📈 Investir</button>
+                    <br>
+                    <br>
+                    <button class="JumpBTN" onclick="Steal()">👤 Roubar</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Segurança</legend>
+                    <button class="JumpBTN" onclick="BePolice()">👮 Ser polícia</button>
+                    <br>
+                    <br>
+                    <button class="JumpBTN" onclick="BeDoctor()">👨‍⚕️ Ser médico</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Política</legend>
+                    <button class="JumpBTN" onclick="DoSpeech()">💬 Discursar</button>
+                    <br>
+                    <button class="JumpBTN" onclick="BePolitical()">🗣️ Entrar na política</button>
+                    <br>
+                    <button class="JumpBTN" onclick="BeKing()">👑 Ser rei</button>
+                </fieldset>
             </fieldset>
         </div>
     </body>

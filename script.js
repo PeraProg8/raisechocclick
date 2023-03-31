@@ -5,6 +5,7 @@ var HungryNum = 30
 var Invt = 0
 var Money = 0
 var StealTimes = 0
+var Know = 10
 var Status = "Vendedor de Chocolates"
 var Music = Math.ceil(Math.random() * 4)
 var WaitTime1 = 60000;
@@ -25,8 +26,7 @@ function playOST(){
         document.getElementById("audiotoplay1").pause()
         document.getElementById("audiotoplay2").pause()
         document.getElementById("audiotoplay3").play()
-    }
-    else if(Music == 4){
+    }else if(Music == 4){
         document.getElementById("audiotoplay1").pause()
         document.getElementById("audiotoplay2").pause()
         document.getElementById("audiotoplay3").pause()
@@ -43,11 +43,13 @@ function ResetGame(){
     Invt = 0
     Money = 0
     StealTimes = 0
+    Know = 10
     Status = "Vendedor de Chocolates"
     document.getElementById("MoneyOutput").value = Money;
     document.getElementById("ChocOutput").value = ChocNum;
     document.getElementById("ReputBar").value = ReputNum;
     document.getElementById("HungryBar").value = HungryNum;
+    document.getElementById("KnowBar").value = Know
 }
 
 function GetChoc(){
@@ -81,7 +83,7 @@ function Steal(){
     }else if(StealTimes > 10){
         window.alert("A polícia prendeu-te por andares a roubar... 'Game Over' (;_;)")
         ResetGame()
-    }else if(Money < 1){
+    }else if(Money < 99){
         StealTimes += 1
         Money += Math.ceil(Math.random(5) * 15)
         ChocNum += Math.ceil(Math.random(1) * 5)
@@ -154,6 +156,21 @@ function BuyChocolates(){
     document.getElementById("ReputBar").value = ReputNum;
 }
 
+function Study(){
+    if(Status == "Vendedor de Chocolates"){
+        window.alert("Tu estudas para adquirir mais conhecimento... E potencialmente arranjar um trabalho melhor... (ºoº)")
+        Know += 10
+    }else if(Status == "Político"){
+        window.alert("És bastante inteligente... Estudas formas de melhorar discursos e gerenciamento político. (*o*)")
+        Know += 20
+    }else if(Status == "Rei"){
+        window.alert("Não queres fazer uma pausa...? Estudas formas de gerenciamento de governo e sobre o funcionamento de uma monarquia achocolatada. (*O*)")
+        Know += 30
+    }
+    
+    document.getElementById("KnowBar").value = Know
+}
+
 function EatChocolate(){
     if(ChocNum == 0){
         window.alert("Não tens nenhum chocolate para comer... Infelizmente (T_T)")
@@ -173,46 +190,88 @@ function DoSpeech(){
     SpeechRandomNum = Math.ceil(Math.random(1) * 3)
     if(SpeechRandomNum == 1){
         window.alert("Tu fazes um discurso sobre a condição dos chocolates... O Público está mais do que convencido... (^-^)")
-        ReputNum += 5
+        ReputNum += 10
+        Know += 5
+        if(Status == "Político"){
+            Money += Math.ceil(Math.random(50) * 100)
+        }else if(Status == "Rei"){
+            Money += Math.ceil(Math.random(80) * 150)
+        }
     }
     if(SpeechRandomNum == 2){
         window.alert("Tu fazes um discurso sobre a felicidade... A felicidade, apesar de mal compreendida pelo público, faz pensar em chocolate... (+_+)")
-        ReputNum += 2
+        ReputNum += 5
+        Know += 5
+        if(Status == "Político"){
+            Money += Math.ceil(Math.random(20) * 50)
+        }else if(Status == "Rei"){
+            Money += Math.ceil(Math.random(30) * 60)
+        }
     }
     if(SpeechRandomNum == 3){
         window.alert("Tu fazes um discurso sobre a corrupção governamental... As pessoas ficam chateadas, pois só querem chocolates e não ouvir falar sobre as mentiras do governo. (;_;)")
         ReputNum -= 1
+        Know += 5
+        if(Status == "Político"){
+            Money += Math.ceil(Math.random(0) * 5)
+        }else if(Status == "Rei"){
+            Money += Math.ceil(Math.random(1) * 10)
+        }
     }
 
+    document.getElementById("KnowBar").value = Know
     document.getElementById("ReputBar").value = ReputNum
 }
 
+function BePolice(){
+    if(ReputNum > 80 && Know > 150){
+        window.alert("Tu agora és um polícia!")
+    }
+}
+
+function BeDoctor(){
+    if(ReputNum > 100 && Know > 200){
+        window.alert("Tu agora és um médico!")
+    }
+}
+
 function BePolitical(){
-    if(ChocNum > 200 && ReputNum > 250 && Money > 1000 && Status == "Vendedor de Chocolates"){
+    if(ChocNum > 200 && ReputNum > 250 && Money > 1000 && Know > 100 && Status == "Vendedor de Chocolates"){
         Status = "Político"
+        Know += 10
         window.alert("Tu agora és politico (?-?)")
     }else if(Status != "Político" && Status == "Vendedor de Chocolates"){
-        window.alert("Precisas de:\nMais de 200 chocolates,\numa alta reputação\ne de mais de 1000$ para seres político (~_~)")
+        window.alert("Precisas de:\nMais de 200 chocolates,\numa alta reputação,\nmuito conhecimento\ne de mais de 1000$ para seres político (~_~)")
     }else if(Status == "Político" && Status != "Vendedor de Chocolates"){
         window.alert("Tu já és político (~-~)")
     }else if(Status == "Rei"){
         window.alert("Tu já és Rei (^.^)")
     }
+
+    document.getElementById("KnowBar").value = Know
 }
 
 function BeKing(){
-    if(ChocNum > 500 && ReputNum > 400 && Money > 5000 && Status == "Político"){
+    if(ChocNum > 500 && ReputNum > 400 && Money > 5000 && Know > 30 && Status == "Político"){
         Status = "Rei"
+        Know += 5
         window.alert("Tu agora és Rei (?-?)")
     }else if(Status != "Político" && Status != "Rei"){
-        window.alert("Precisas de:\nSer politico, \nter mais de 500 chocolates,\numa alta reputação\ne de mais de 5000$ para seres Rei (~_~)")
+        window.alert("Precisas de:\nSer politico, \nter mais de 500 chocolates,\numa alta reputação,\nmuito conhecimento\ne de mais de 5000$ para seres Rei (~_~)")
     }else if(Status == "Rei"){
         window.alert("Tu já és Rei (^.^)")
     }
+
+    document.getElementById("KnowBar").value = Know
 }
 
+//Log de adições e correções
 function Log(){
-    document.write("<title>Raise, My Chocolate Clicker</title><style>html, head, body{font-family: sans-serif; color: black;} p, ul{font-family: 'Courier New'; color: black;}</style><h1>Log.:</h1><br><ul><li>[1] Função 'DoSpeech()' adicionada;</li><li>[2] Função 'EatChocolate()' atualizada;</li><li>[3] Função 'GetHungry()' atualizada;</li><li>[4] Função 'DoSpeech()' atualizada;</li><ul><li>[4.1] Adicionada possibilidade de 3 discursos aleatórios;</li></ul><li>[5] Função 'Steal()' atualizada;</li><li>[6] Função musical adicionada;</li><li>[7] Função musical atualizada;</li><li>[8] Scrollbar alterada visualmente;</li><li>[9] Função 'BeKing()' corrigida;</li><li>[10] Função 'BePolitical()' corrigida;</li><li>[29/Mar.] Parabéns Rafa! 🎂;</li><li>[11] Adicionada função 'playOST()' adicionada;<ul><li>[11.1] Iniciação de música aleatória;<li>[11.2] Corrigidas as funções de música;</li></li></ul></li><li>[12] Versão 4 realisada;</li></ul>")
+    ProgressLose = confirm("Verifica se não avançaste significativamente no teu jogo; todo o progresso pode ser perdido!\n\nQueres prosseguir e abrir o Log?")
+    if(ProgressLose){
+        document.write("<title>Raise, My Chocolate Clicker</title><style>html, head, body{font-family: sans-serif; color: black;} p, ul{font-family: 'Courier New'; color: black;}</style><h1>Log.:</h1><br><ul><li>[1] Função 'DoSpeech()' adicionada;</li><li>[2] Função 'EatChocolate()' atualizada;</li><li>[3] Função 'GetHungry()' atualizada;</li><li>[4] Função 'DoSpeech()' atualizada;</li><ul><li>[4.1] Adicionada possibilidade de 3 discursos aleatórios;</li></ul><li>[5] Função 'Steal()' atualizada;</li><li>[6] Função musical adicionada;</li><li>[7] Função musical atualizada;</li><li>[8] Scrollbar alterada visualmente;</li><li>[9] Função 'BeKing()' corrigida;</li><li>[10] Função 'BePolitical()' corrigida;</li><li>[29/Mar.] Parabéns Rafa! 🎂;</li><li>[11] Adicionada função 'playOST()' adicionada;<ul><li>[11.1] Iniciação de música aleatória;<li>[11.2] Corrigidas as funções de música;</li></li></ul></li><li>[12] Versão 4 🥳;</li><li>[13] Função 'DoSpeech()' atualizada;</li><li>[14] Divisões de 'Negócias' e 'Política' organizadas;<ul><li>[14.1] Criada divisão de 'Comércio';</li><li>[14.2] Criada divisão de 'Segurança';</li></ul></li><li>[15] Função 'BePolice()' adicionada;</li><li>[16] Função 'BeDoctor()' adicionada;</li><li>[17] Barra de 'Conhecimento(s)' adicionada;</li></ul>")
+    }
 }
 
+//Funções em 'segundo plano'
 setInterval(GetHungry, WaitTime2)

@@ -80,12 +80,15 @@ html, head, body{
 }
 @keyframes Yeah {
     0%{
-        color: red;
+        text-shadow: royalblue 3px 3px 5px;
+        color: blue;
     }
     50%{
-        color: yellow;
+        text-shadow: darkgray 2px 2px 3px;
+        color: black;
     }
     100%{
+        text-shadow: royalblue 3px 3px 5px;
         color: blue;
     }
 }
