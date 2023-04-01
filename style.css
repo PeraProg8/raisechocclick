@@ -64,6 +64,13 @@ html, head, body{
     width: 900px;
 }
 
+#Special{
+    background-color: transparent;
+    border-color: transparent;
+    color: red;
+    font-family: cursive;
+}
+
 @keyframes JumpHover {
     0%{
         transform: rotate(0deg);
