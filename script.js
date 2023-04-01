@@ -233,14 +233,28 @@ function DoSpeech(){
 }
 
 function BePolice(){
-    if(ReputNum > 80 && Know > 150){
-        window.alert("Tu agora és um polícia!")
+    if(Status != "Político" | Status != "Rei"){
+        if(ReputNum > 80 && Know > 150){
+            Status = "Polícia"
+            window.alert("Tu agora és um polícia! (`-`)")
+        }
+    }else if(Status == "Político"){
+        window.alert("Tu és político! (^o^)")
+    }else if(Status == "Rei"){
+        window.alert("Tu és Rei! (*o*)")
     }
 }
 
 function BeDoctor(){
-    if(ReputNum > 100 && Know > 200){
-        window.alert("Tu agora és um médico!")
+    if(Status != "Político" | Status != "Rei"){
+        if(ReputNum > 100 && Know > 200){
+            Status = "Médico"
+            window.alert("Tu agora és um médico! (º-º)")
+        }
+    }else if(Status == "Político"){
+        window.alert("Tu és político! (^o^)")
+    }else if(Status == "Rei"){
+        window.alert("Tu és Rei! (*o*)")
     }
 }
 
