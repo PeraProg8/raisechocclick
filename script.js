@@ -237,6 +237,8 @@ function BePolice(){
         if(ReputNum > 80 && Know > 150){
             Status = "Polícia"
             window.alert("Tu agora és um polícia! (`-`)")
+        }else{
+            window.alert("Precisas de uma alta reputação e de alto conhecimento para seres polícia! (o_o)")
         }
     }else if(Status == "Político"){
         window.alert("Tu és político! (^o^)")
@@ -254,6 +256,8 @@ function BeDoctor(){
         if(ReputNum > 100 && Know > 200){
             Status = "Médico"
             window.alert("Tu agora és um médico! (º-º)")
+        }else{
+            window.alert("Precisas de uma alta reputação e de alto conhecimento para seres médico! (o_o)")
         }
     }else if(Status == "Político"){
         window.alert("Tu és político! (^o^)")
