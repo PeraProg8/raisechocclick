@@ -3,6 +3,10 @@ html, head, body{
     color: black;
 }
 
+fieldset{
+    width: auto;
+}
+
 ::-webkit-scrollbar{
     background-color: transparent;
 }

@@ -56,8 +56,8 @@ function ResetGame(){
     StealTimes = 0
     Know = 10
     Status = "Vendedor de Chocolates"
-    document.getElementById("MoneyOutput").value = Money;
-    document.getElementById("ChocOutput").value = ChocNum;
+    document.getElementById("MoneyOutput").innerHTML = Money;
+    document.getElementById("ChocOutput").innerHTML = ChocNum;
     document.getElementById("ReputBar").value = ReputNum;
     document.getElementById("HungryBar").value = HungryNum;
     document.getElementById("KnowBar").value = Know
@@ -65,7 +65,7 @@ function ResetGame(){
 
 function GetChoc(){
     ChocNum += 1
-    document.getElementById("ChocOutput").value = ChocNum;
+    document.getElementById("ChocOutput").innerHTML = ChocNum;
 }
 
 function Invest(){
@@ -73,8 +73,8 @@ function Invest(){
         Money += 5
         ChocNum -= 1
         ReputNum += 1.5
-        document.getElementById("MoneyOutput").value = Money;
-        document.getElementById("ChocOutput").value = ChocNum;
+        document.getElementById("MoneyOutput").innerHTML = Money;
+        document.getElementById("ChocOutput").innerHTML = ChocNum;
         document.getElementById("ReputBar").value = ReputNum;
     }
     if(ChocNum == 0 && ReputNum == 0){
@@ -101,8 +101,8 @@ function Steal(){
         ReputNum -= 10
     }
 
-    document.getElementById("ChocOutput").value = ChocNum;
-    document.getElementById("MoneyOutput").value = Money;
+    document.getElementById("ChocOutput").innerHTML = ChocNum;
+    document.getElementById("MoneyOutput").innerHTML = Money;
     document.getElementById("ReputBar").value = ReputNum;
 }
 
@@ -148,8 +148,8 @@ function SellChocolate(){
         ChocNum = 0
     }
     ReputNum += ChocToSell * 2
-    document.getElementById("ChocOutput").value = ChocNum;
-    document.getElementById("MoneyOutput").value = Money;
+    document.getElementById("ChocOutput").innerHTML = ChocNum;
+    document.getElementById("MoneyOutput").innerHTML = Money;
     document.getElementById("ReputBar").value = ReputNum;
     ChocToSell = 0
 }
@@ -162,8 +162,8 @@ function BuyChocolates(){
     ChocNum += 5
     Money -= Math.ceil(Math.random(3) * 5)
     ReputNum += 0.1
-    document.getElementById("ChocOutput").value = ChocNum;
-    document.getElementById("MoneyOutput").value = Money;
+    document.getElementById("ChocOutput").innerHTML = ChocNum;
+    document.getElementById("MoneyOutput").innerHTML = Money;
     document.getElementById("ReputBar").value = ReputNum;
 }
 
@@ -191,7 +191,7 @@ function EatChocolate(){
         console.log(HungryNum, ChocNum)
         ChocNum = 0
         document.getElementById("HungryBar").value = HungryNum;
-        document.getElementById("ChocOutput").value = ChocNum;
+        document.getElementById("ChocOutput").innerHTML = ChocNum;
     }
 }
 
@@ -292,7 +292,7 @@ function BeKing(){
 function Log(){
     ProgressLose = confirm("Verifica se não avançaste significativamente no teu jogo; todo o progresso pode ser perdido!\n\nQueres prosseguir e abrir o Log?")
     if(ProgressLose){
-        document.write("<title>Raise, My Chocolate Clicker</title><style>html, head, body{font-family: sans-serif; color: black;} p, ul{font-family: 'Courier New'; color: black;}</style><h1>Log.:</h1><br><ul><li>[1] Função 'DoSpeech()' adicionada;</li><li>[2] Função 'EatChocolate()' atualizada;</li><li>[3] Função 'GetHungry()' atualizada;</li><li>[4] Função 'DoSpeech()' atualizada;</li><ul><li>[4.1] Adicionada possibilidade de 3 discursos aleatórios;</li></ul><li>[5] Função 'Steal()' atualizada;</li><li>[6] Função musical adicionada;</li><li>[7] Função musical atualizada;</li><li>[8] Scrollbar alterada visualmente;</li><li>[9] Função 'BeKing()' corrigida;</li><li>[10] Função 'BePolitical()' corrigida;</li><li>[29/Mar.] Parabéns Rafa! 🎂;</li><li>[11] Adicionada função 'playOST()' adicionada;<ul><li>[11.1] Iniciação de música aleatória;<li>[11.2] Corrigidas as funções de música;</li></li></ul></li><li>[12] Versão 4 🥳;</li><li>[13] Função 'DoSpeech()' atualizada;</li><li>[14] Divisões de 'Negócias' e 'Política' organizadas;<ul><li>[14.1] Criada divisão de 'Comércio';</li><li>[14.2] Criada divisão de 'Segurança';</li></ul></li><li>[15] Função 'BePolice()' adicionada;</li><li>[16] Função 'BeDoctor()' adicionada;</li><li>[17] Barra de 'Conhecimento(s)' adicionada;</li><li>[18] Funções 'BeDoctor()' e 'BePolice()' atualizadas;</li><li>[19] Função 'Study()' adicionada;</li><li>[20] Função 'Study()' atualizada;</li><li>[21] Versão 5.1;</li><li>[22] Função 'Study()' atualizada;</li><li>[23] Versão 5.2;</li></ul>")
+        document.write("<title>Raise, My Chocolate Clicker</title><style>html, head, body{font-family: sans-serif; color: black;} p, ul{font-family: 'Courier New'; color: black;}</style><h1>Log.:</h1><br><ul><li>[1] Função 'DoSpeech()' adicionada;</li><li>[2] Função 'EatChocolate()' atualizada;</li><li>[3] Função 'GetHungry()' atualizada;</li><li>[4] Função 'DoSpeech()' atualizada;</li><ul><li>[4.1] Adicionada possibilidade de 3 discursos aleatórios;</li></ul><li>[5] Função 'Steal()' atualizada;</li><li>[6] Função musical adicionada;</li><li>[7] Função musical atualizada;</li><li>[8] Scrollbar alterada visualmente;</li><li>[9] Função 'BeKing()' corrigida;</li><li>[10] Função 'BePolitical()' corrigida;</li><li>[29/Mar.] Parabéns Rafa! 🎂;</li><li>[11] Adicionada função 'playOST()' adicionada;<ul><li>[11.1] Iniciação de música aleatória;<li>[11.2] Corrigidas as funções de música;</li></li></ul></li><li>[12] Versão 4 🥳;</li><li>[13] Função 'DoSpeech()' atualizada;</li><li>[14] Divisões de 'Negócias' e 'Política' organizadas;<ul><li>[14.1] Criada divisão de 'Comércio';</li><li>[14.2] Criada divisão de 'Segurança';</li></ul></li><li>[15] Função 'BePolice()' adicionada;</li><li>[16] Função 'BeDoctor()' adicionada;</li><li>[17] Barra de 'Conhecimento(s)' adicionada;</li><li>[18] Funções 'BeDoctor()' e 'BePolice()' atualizadas;</li><li>[19] Função 'Study()' adicionada;</li><li>[20] Função 'Study()' atualizada;</li><li>[21] Versão 5.1;</li><li>[22] Função 'Study()' atualizada;</li><li>[23] Versão 5.2;</li><li>[24] Alterada tag 'value' para 'innerHTML' de Ids 'ChocOutput' e 'MoneyOutput';</li></ul>")
     }
 }
 
