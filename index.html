@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=7">
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
-        <p class="ver">V. Release 5.2</p>
+        <p class="ver">V. Release 5.5</p>
         <p style="font-size: 10px;">Mensagem para os cheaters: Não uses auto-clicker :)</p>
         <p style="font-size: 10px;">Inspirado em Candy Box e Cookie Clicker</p>
         <p style="font-size: 10px;">Bem-vindo ao "Raise, My Chocolate Clicker" (RMCC) (c)</p>
@@ -24,9 +24,11 @@
                 <source src="OST/Bombons Na Luta.mp3"/>
             </audio>
             <input type="button" value="Tocar" onclick="playOST()" style="font-size: 10px; text-decoration: underline; text-decoration-color: blue; cursor: pointer;"/><br>
-            <button onclick="ResetGame()" style="font-size: 10px; text-decoration: underline; text-decoration-color: blue; cursor: pointer;">Reiniciar</button>
+            <br>
+            <div align="center">
+                <p>[F5 para reiniciar]</p>
+            </div>
         </div>
-        <link rel="icon" href="icon.png"/>
         <link rel="stylesheet" href="style.css"/>
         <script src="script.js"></script>
     </head>
@@ -91,6 +93,9 @@
                     <button class="JumpBTN" onclick="BePolitical()">🗣️ Entrar na política</button>
                     <br>
                     <button class="JumpBTN" onclick="BeKing()">👑 Ser rei</button>
+                    <br>
+                    <br>
+                    <input id="CountryName" type="text" placeholder="[Nome da tua nova nação]" style="font-size: 18px;"/><button onclick="getCountryName()">Alterar</button>
                 </fieldset>
             </fieldset>
         </div>
