@@ -1,0 +1,104 @@
+/*
+    +-----------------+
+    |Made by PeraProg8|
+    +-----------------+
+*/
+
+html, head, body{
+    background-color: royalblue;
+    font-family: cursive;
+    color: white;
+    cursor: default;
+}
+
+h1{
+    font-style: italic;
+}
+
+fieldset{
+    border-color: white;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 15px;
+    width: 750px;
+}
+
+hr{
+    border-color: white;
+    border-width: 3px;
+    border-style: dashed;
+    border-radius: 5px;
+}
+
+button, input[type="text"], input[type="number"]{
+    background-color: white;
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 18px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    color: black;
+}button:hover{
+    cursor: pointer;
+}button:active{
+    background-color: lightblue;
+    color: aliceblue;
+}
+
+.division{
+    position: relative;
+    animation-name: presentation;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.game-container{
+    column-count: 4;
+    margin-top: 10px;
+}
+
+.game-button{
+    display: table-column;
+    box-shadow: 5px 5px 20px black;
+    background-color: white;
+    border-color: transparent;
+    border-radius: 55px;
+    cursor: pointer;
+}.button-img{
+    width: 150px;
+    height: 150px;
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar-corner{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: lightgrey;
+    border-radius: 7px;
+}
+
+#choc-output, #money-output, #message-output, #influence-output{
+    text-shadow: 4px 4px 10px black;
+    font-size: 42px;
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+#sound-volume{
+    width: 200px;
+    cursor: e-resize;
+}
+
+/*
+@keyframes presentation {
+    from{
+        margin-top: -500px;
+    }
+    to{
+        margin-top: 0px;
+    }
+}
+*/
