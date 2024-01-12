@@ -9,6 +9,9 @@ html, head, body{
     font-family: cursive;
     color: white;
     cursor: default;
+    animation-name: presentation;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
 }
 
 h1{
@@ -92,8 +95,7 @@ button, input[type="text"], input[type="number"]{
     cursor: e-resize;
 }
 
-/*
-@keyframes presentation {
+@keyframes presentation{
     from{
         margin-top: -500px;
     }
@@ -101,4 +103,3 @@ button, input[type="text"], input[type="number"]{
         margin-top: 0px;
     }
 }
-*/
