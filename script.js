@@ -121,7 +121,7 @@ class ingame{
         this.reputation = document.getElementById("reputation-bar");
 
         if(this.money !== 0){ //Fórmula de sabedoria
-            this.knowoutput.value += Math.floor(Math.abs((this.money+this.reputation.value)/Math.sqrt(this.knowoutput.value))*this.price)
+            this.knowoutput.value += Math.floor(Math.abs((this.money+this.reputation.value)/Math.sqrt(this.knowoutput.value))*this.price/2)
             this.reputation.value += Math.floor(Math.abs(this.money/Math.sqrt(this.knowoutput.value))*this.price)
             this.money -= this.money
             this.moneyoutput.innerHTML = `${this.money}&dollar;`
@@ -137,7 +137,7 @@ class ingame{
         if(this.knowoutput.value >= 30 && this.reputation.value >= 40){
             this.spchform = Math.floor((this.knowoutput.value/3+this.reputation.value)/10)
             this.influence.innerHTML = `${this.spchform}%`
-            this.reputation.value = this.spchform/(this.knowoutput.value*5)
+            this.reputation.value = this.spchform/(this.knowoutput.value*2)
             settings.playspeechsound()
         }else{
             settings.playclicksound()

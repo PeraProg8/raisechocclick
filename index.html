@@ -21,7 +21,7 @@
             <fieldset style="margin-top: -5px;">
                 <div>
                     <div style="margin-bottom: -20px;">
-                        <label for="music-to-play">Músicas:</label>
+                        <label for="music-to-play">Música:</label>
                         <input id="music-to-play" type="number" value="5" min="1" max="5"/>
                         <button onclick="music.process('play')">&DoubleContourIntegral;</button>
                         <button onclick="music.process('stop')">&ClockwiseContourIntegral;</button>
@@ -42,6 +42,7 @@
     <body onload="settings.soundvolume()">
         <div class="division" align="center">
             <fieldset style="margin-top: 10px;">
+                <hr>
                 <div class="game-container">
                     <!--Chocolate button-->
                     <button class="game-button" onclick="player.getchoc()">
@@ -71,6 +72,7 @@
                     <label for="reputation-bar">Reputação: </label><progress id="reputation-bar" value="10" min="0" max="160"></progress>
                     <br>
                 </div>
+                <hr>
             </fieldset>
         </div>
     </body>
